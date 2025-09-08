@@ -57,7 +57,6 @@ export function useAuthState() {
     localStorage.removeItem('access_token')
     localStorage.removeItem('refresh_token')
     setUser(null)
-    userAPI.logout().catch(console.error)
   }
 
   return { user, isLoading, login, logout }

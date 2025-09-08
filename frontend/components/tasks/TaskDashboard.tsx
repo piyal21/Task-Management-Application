@@ -6,12 +6,12 @@ import { TaskList } from './TaskList'
 import { TaskForm } from './TaskForm'
 import { TaskStats } from './TaskStats'
 import { Header } from './Header'
-import { TaskStats as TaskStatsType } from '@/types'
+import { TaskStats as TaskStatsType, Task } from '@/types'
 
 export function TaskDashboard() {
   const { user, logout } = useAuth()
   const [showTaskForm, setShowTaskForm] = useState(false)
-  const [editingTask, setEditingTask] = useState(null)
+  const [editingTask, setEditingTask] = useState<Task | null>(null)
   const [stats, setStats] = useState<TaskStatsType | null>(null)
 
   const handleTaskCreated = () => {

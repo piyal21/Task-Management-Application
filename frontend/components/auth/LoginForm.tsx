@@ -157,7 +157,7 @@ export function LoginForm({ onSwitchToRegister }: { onSwitchToRegister: () => vo
           onClick={onSwitchToRegister}
           className="text-sm text-primary-600 hover:text-primary-500"
         >
-          Don't have an account? Sign up
+          Don&apos;t have an account? Sign up
         </button>
       </div>
     </form>

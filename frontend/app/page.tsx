@@ -4,11 +4,24 @@ import { useAuth } from '@/hooks/useAuth'
 import { LoginForm } from '@/components/auth/LoginForm'
 import { RegisterForm } from '@/components/auth/RegisterForm'
 import { TaskDashboard } from '@/components/tasks/TaskDashboard'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Home() {
+function HomeContent() {
   const { user, isLoading } = useAuth()
   const [showRegister, setShowRegister] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+      </div>
+    )
+  }
 
   if (isLoading) {
     return (
@@ -44,4 +57,8 @@ export default function Home() {
   }
 
   return <TaskDashboard />
+}
+
+export default function Home() {
+  return <HomeContent />
 }

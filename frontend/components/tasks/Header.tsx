@@ -1,7 +1,7 @@
 'use client'
 
 import { User } from '@/types'
-import { LogoutIcon, UserIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon, UserIcon } from '@heroicons/react/24/outline'
 
 interface HeaderProps {
   user: User | null
@@ -44,7 +44,7 @@ export function Header({ user, onLogout }: HeaderProps) {
               onClick={onLogout}
               className="flex items-center space-x-2 text-gray-500 hover:text-gray-700 transition-colors"
             >
-              <LogoutIcon className="h-5 w-5" />
+              <ArrowRightOnRectangleIcon className="h-5 w-5" />
               <span className="hidden sm:block">Logout</span>
             </button>
           </div>
